@@ -1,0 +1,35 @@
+<table class="ui celled table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Tên sách</th>
+    <th>Tác giả</th>
+    <th colspan="2" class="center aligned">Option</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of bookList; index as i">
+    <td hidden>{{book.id}}</td>
+    <td>{{i + 1}}</td>
+    <td>
+      <a [routerLink]="['/book', book.id]">{{book.title}}</a>
+    </td>
+    <td>{{book.author}}</td>
+    <td class="right aligned">
+      <a class="ui primary button" [routerLink]="['/todo', 'edit', book.id]">Edit</a>
+    </td>
+    <td class="right aligned">
+      <a class="ui red button right aligned" [routerLink]="['/todo', 'delete', book.id]">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot class="full-width">
+  <tr>
+    <th colspan="5">
+      <div class="ui right floated small primary button">
+        <a routerLink="/todo/show_create" style="color: white">Thêm mới</a>
+      </div>
+    </th>
+  </tr>
+  </tfoot>
+</table>
