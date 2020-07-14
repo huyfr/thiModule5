@@ -1,1 +1,17 @@
-<p>delete-book works!</p>
+<div class="ui text container">
+  <div *ngIf="currentTodo; else nothing">
+    <h2>Chi tiết sách</h2>
+    <p>Tên sách: {{currentTodo.title}}</p>
+    <p>Tác giả: {{currentTodo.author}}</p>
+    <p>Mô tả: </p>
+    <p>{{currentTodo.description}}</p>
+  </div>
+
+
+  <button class="ui primary button" type="button" (click)="onDelete()">Xóa sách</button>
+  <button class="ui button" type="button" (click)="backToIndex()">Thoát</button>
+
+  <ng-template #nothing>
+    <p>Không có dữ liệu</p>
+  </ng-template>
+</div>
