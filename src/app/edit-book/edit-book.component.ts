@@ -40,6 +40,7 @@ export class EditBookComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submitted = true;
     if (this.editForm.valid) {
       const {value} = this.editForm;
       const data = {
@@ -48,7 +49,6 @@ export class EditBookComponent implements OnInit {
       };
       this.bookService.update(data).subscribe(
         next => {
-          this.submitted = true;
           this.router.navigateByUrl('');
         }, error => {
           console.log(error);

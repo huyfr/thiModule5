@@ -27,13 +27,13 @@ export class CreateBookComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.submitted = true;
     if (this.createForm.valid) {
       const value = this.createForm.getRawValue();
       console.log(value);
       this.bookService.save(value).subscribe(error => {
         console.log(error)
       });
-      this.submitted = true;
       this.router.navigateByUrl('');
     }
   }

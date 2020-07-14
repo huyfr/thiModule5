@@ -4,7 +4,7 @@
     <th>#</th>
     <th>Tên sách</th>
     <th>Tác giả</th>
-    <th colspan="2" class="center aligned">Option</th>
+    <th colspan="2" class="center aligned">Tùy chọn</th>
   </tr>
   </thead>
   <tbody>
@@ -16,16 +16,17 @@
     </td>
     <td>{{book.author}}</td>
     <td class="right aligned">
-      <a class="ui primary button" [routerLink]="['/book', book.id , 'edit']">Edit</a>
+      <a class="ui primary button" [routerLink]="['/book', book.id , 'edit']">Sửa</a>
     </td>
     <td class="right aligned">
-      <a class="ui red button right aligned" [routerLink]="['/book', book.id, 'delete']">Delete</a>
+      <a class="ui red button right aligned" [routerLink]="['/book', book.id, 'delete']">Xóa</a>
     </td>
   </tr>
   </tbody>
   <tfoot class="full-width">
   <tr>
-    <th colspan="5">
+    <th class="left aligned">Tổng số sách: {{length}}</th>
+    <th colspan="4">
       <div class="ui right floated small primary button">
         <a routerLink="/book/create" style="color: white">Thêm mới</a>
       </div>

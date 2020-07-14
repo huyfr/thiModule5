@@ -1,15 +1,14 @@
 <div class="ui text container">
-  <div *ngIf="currentBook; else nothing">
-    <h2>Chi tiết sách</h2>
-    <p>Tên sách: {{currentBook.title}}</p>
-    <p>Tác giả: {{currentBook.author}}</p>
-    <p>Mô tả: </p>
-    <p>{{currentBook.description}}</p>
+  <div class="ui huge message">
+    <div *ngIf="currentBook; else nothing">
+      <h1>Chi tiết sách</h1>
+      <p>Tên sách: {{currentBook.title}}</p>
+      <p>Tác giả: {{currentBook.author}}</p>
+      <p>Mô tả: </p>
+      <p>{{currentBook.description}}</p>
+    </div>
   </div>
-
-
-  <button class="ui button" type="button" (click)="backToIndex()">Back</button>
-
+  <button class="ui button" type="button" (click)="backToIndex()">Thoát</button>
   <ng-template #nothing>
     <p>Không có dữ liệu</p>
   </ng-template>
