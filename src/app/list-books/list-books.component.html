@@ -16,7 +16,7 @@
     </td>
     <td>{{book.author}}</td>
     <td class="right aligned">
-      <a class="ui primary button" [routerLink]="['/todo', 'edit', book.id]">Edit</a>
+      <a class="ui primary button" [routerLink]="['/book', book.id , 'edit']">Edit</a>
     </td>
     <td class="right aligned">
       <a class="ui red button right aligned" [routerLink]="['/todo', 'delete', book.id]">Delete</a>

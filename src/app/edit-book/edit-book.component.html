@@ -1,1 +1,23 @@
-<p>edit-book works!</p>
+<form class="ui form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <h2>Thêm sách mới</h2>
+    <label>Tên</label>
+    <input type="text" formControlName="title">
+    <div class="ui pointing red basic label" *ngIf="submitted && rfc.title.errors">
+      <div *ngIf="rfc.title.errors.required">Không được để trống tên sách</div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Tác giả</label>
+    <input type="text" formControlName="author">
+    <div class="ui pointing red basic label" *ngIf="submitted && rfc.author.errors">
+      <div *ngIf="rfc.author.errors.required">Không được để trống tác giả</div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Mô tả</label>
+    <input type="text" formControlName="description">
+  </div>
+  <button class="ui primary button" type="submit">Thêm sách</button>
+  <button class="ui button" type="reset" (click)="backToIndex()">Thoát</button>
+</form>
